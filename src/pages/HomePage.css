@@ -1,0 +1,24 @@
+.hero {
+  padding-top: 200px;
+  display: grid;
+  grid-template-columns: 50fr 50fr;
+  gap: 200px;
+}
+
+.hero-right-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-explore-button {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  border: 0px;
+  transition: all 0.5s ease;
+}
+
+.hero-explore-button:hover {
+  outline: 3rem solid rgba(255, 255, 255, 0.2);
+}

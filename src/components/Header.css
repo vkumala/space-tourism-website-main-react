@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-left: 3rem;
+}
+
+.logo {
+  height: 2rem;
+}
+
+.main-nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 0 12rem 0 8rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 2.5rem 0;
+}
+
+.main-nav a:hover {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  display: inline-block;
+}
+.main-nav a.active {
+  border-bottom: 2px solid #ffffff;
+  display: inline-block;
+}

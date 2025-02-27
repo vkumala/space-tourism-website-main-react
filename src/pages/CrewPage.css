@@ -1,0 +1,29 @@
+.section-crew {
+  display: grid;
+  grid-template-columns: 50fr 50fr;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+.crew-container nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.crew-nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.crew-nav button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.crew-image img {
+  height: 700px;
+}

@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Barlow", "Barlow Condensed", "Bellefair", serif;
+  font-weight: 400;
+  color: #ffffff;
+
+  background-image: url("/home/background-home-desktop.jpg");
+
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  margin: 0;
+  /* display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh; */
+}
+
+/* a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+} */
+
+/* 
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+
+.text-preset-1 {
+  font-family: "Bellefair", serif;
+  font-size: 144px;
+  line-height: 172%;
+  text-transform: uppercase;
+}
+
+.text-preset-2 {
+  font-family: "Bellefair", serif;
+  font-size: 100px;
+  line-height: 114%;
+  text-transform: uppercase;
+}
+
+.text-preset-3 {
+  font-family: "Bellefair", serif;
+  font-size: 56px;
+  line-height: 164%;
+  text-transform: uppercase;
+}
+.text-preset-4 {
+  font-family: "Bellefair", serif;
+  font-size: 32px;
+  line-height: 136%;
+  text-transform: uppercase;
+}
+
+.text-preset-5 {
+  font-family: "Barlow Condensed", serif;
+  font-size: 28px;
+  line-height: 133%;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.text-preset-6 {
+  font-family: "Bellefair", serif;
+  font-size: 28px;
+  line-height: 132%;
+  text-transform: uppercase;
+}
+
+.text-preset-7 {
+  font-family: "Barlow Condensed", serif;
+  font-size: 14px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+.text-preset-8 {
+  font-family: "Barlow Condensed", serif;
+  font-size: 16px;
+  line-height: 192%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.text-preset-9 {
+  font-family: "Barlow", serif;
+  font-size: 18px;
+  line-height: 180%;
+}
+
+main {
+  padding-top: 100px;
+  padding-left: 200px;
+}
