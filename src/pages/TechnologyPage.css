@@ -4,11 +4,31 @@
   padding: 2rem 0;
   gap: 30px;
   align-items: center;
+
+  /* margin-right: 200px; */
 }
+
 .technology-nav {
   list-style: none;
   display: grid;
   gap: 2rem;
+}
+
+.technology-nav button {
+  all: unset;
+  display: inline-block;
+  cursor: pointer;
+  padding: 1rem 0;
+}
+
+.technology-nav button:hover {
+  background-color: white;
+  color: black;
+}
+
+.technology-nav button.active {
+  background-color: white;
+  color: black;
 }
 
 .technology-nav button {
@@ -21,4 +41,8 @@
   padding: 10px;
   border: 1px solid white;
   text-align: center;
+}
+
+.technology-image img {
+  /* width: 100%; */
 }

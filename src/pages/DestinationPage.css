@@ -1,12 +1,14 @@
 .page-title {
   padding: 1rem 0;
+  margin-bottom: 2rem;
 }
 
 .section-destination {
   display: grid;
-  grid-template-columns: 50fr 50fr;
-
-  padding: 6rem 0;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 200px;
+  gap: 2rem;
+  padding: 1rem;
 }
 
 .destination-nav {
@@ -28,7 +30,7 @@
   margin-bottom: -2px;
 }
 
-button.active {
+.destination-nav button.active {
   border-bottom: 2px solid #ffffff;
   margin-bottom: -2px;
 }
@@ -37,6 +39,7 @@ button.active {
   opacity: 0.3;
   margin: 2rem 0;
 }
+
 .destination-footer {
   display: grid;
   grid-template-columns: 50fr 50fr;

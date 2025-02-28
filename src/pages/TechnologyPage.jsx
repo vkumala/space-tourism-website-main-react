@@ -17,9 +17,14 @@ export default function TechnologyPage() {
       <div className="section-technology">
         <nav>
           <ul className="technology-nav text-preset-4">
-            {TECHS.map((technology, index) => (
-              <li key={index}>
-                <button onClick={() => handleClick(index)}>{index + 1}</button>
+            {TECHS.map((technology, id) => (
+              <li key={id}>
+                <button
+                  className={id === index ? "active" : undefined}
+                  onClick={() => handleClick(id)}
+                >
+                  {id + 1}
+                </button>
               </li>
             ))}
           </ul>

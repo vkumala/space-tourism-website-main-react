@@ -15,13 +15,13 @@ export default function DestinationPage() {
     <>
       <div className="page-title text-preset-5">01 Pick your destination</div>
       <div className="section-destination">
-        <div className="destination-image">
+        <div>
           <img
             src={DESTINATIONS[index].images.webp}
             alt={DESTINATIONS[index].name}
           />
         </div>
-        <div className="destination-container">
+        <div>
           <nav>
             <ul className="destination-nav text-preset-8">
               {DESTINATIONS.map((destination, id) => (
@@ -36,10 +36,8 @@ export default function DestinationPage() {
               ))}
             </ul>
           </nav>
-          <div className="destination-title text-preset-2">
-            {DESTINATIONS[index].name}
-          </div>
-          <div className="destination-description text-preset-9">
+          <div className=" text-preset-2">{DESTINATIONS[index].name}</div>
+          <div className=" text-preset-9">
             {DESTINATIONS[index].description}
           </div>
           <hr className="destination-hr" />

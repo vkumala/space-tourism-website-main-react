@@ -1,8 +1,9 @@
 .hero {
-  padding-top: 200px;
+  padding-top: 10rem;
   display: grid;
   grid-template-columns: 50fr 50fr;
   gap: 200px;
+  margin-right: 200px;
 }
 
 .hero-right-section {

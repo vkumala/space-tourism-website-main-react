@@ -15,16 +15,18 @@ export default function CrewPage() {
       <div className="page-title text-preset-5">02 Meet your crew</div>
       <div className="section-crew">
         <div className="crew-container">
-          <div className="crew-role text-preset-4">{CREW[index].role}</div>
-          <div className="crew-name text-preset-3">{CREW[index].name}</div>
-          <div className="crew-bio text-preset-9">{CREW[index].bio}</div>
+          <div className="crew-text">
+            <div className="crew-role text-preset-4">{CREW[index].role}</div>
+            <div className="crew-name text-preset-3">{CREW[index].name}</div>
+            <div className="crew-bio text-preset-9">{CREW[index].bio}</div>
+          </div>
           <nav>
             <ul className="crew-nav">
-              {CREW.map((crew, index) => (
-                <li key={index}>
+              {CREW.map((crew, id) => (
+                <li key={id}>
                   <button
-                    className=""
-                    onClick={() => handleClick(index)}
+                    className={id === index ? "active" : undefined}
+                    onClick={() => handleClick(id)}
                   ></button>
                 </li>
               ))}
