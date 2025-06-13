@@ -1,32 +1,111 @@
-.header {
+/* Navbar */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2rem;
-  padding-left: 2rem;
+  margin-top: 2rem;
+  position: relative;
 }
 
-.main-nav {
-  list-style: none;
+.logo {
+  padding: 1.5rem 1.5rem;
+}
+
+.nav-links-desktop {
   display: flex;
-  align-items: center;
-  gap: 3rem;
-  padding: 0 8rem 0 6rem;
+  gap: 2rem;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+  padding: 0 2rem;
 }
 
-.main-nav a {
+.nav-links-desktop a {
+  color: white;
   text-decoration: none;
-  color: #ffffff;
   padding: 2rem 0;
+  white-space: nowrap;
 }
 
-.main-nav a:hover {
+.nav-links-desktop a:hover {
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-  display: inline-block;
 }
-.main-nav a.active {
+
+.nav-links-desktop a.active {
   border-bottom: 2px solid #ffffff;
-  display: inline-block;
+}
+
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+  color: white;
+  height: 3rem;
+  width: 3rem;
+  margin-right: 2rem;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Hidden by default */
+  width: 250px;
+  height: 100%;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  transition: right 0.3s ease;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar nav a {
+  display: block;
+  width: 100%;
+  margin-bottom: 2rem;
+  color: white;
+  text-decoration: none;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+/* Responsive Rules */
+
+@media (max-width: 992px) {
+  .navbar {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-links-desktop {
+    display: none;
+  }
+
+  .nav-links-mobile a.hover {
+    border-right: 2px solid #ffffff;
+  }
+
+  .nav-links-mobile a.active {
+    border-right: 2px solid #ffffff;
+  }
+
+  .btn-mobile-nav {
+    display: block;
+  }
 }

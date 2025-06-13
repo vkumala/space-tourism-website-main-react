@@ -6,11 +6,18 @@
   box-sizing: border-box;
 }
 
+body {
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+
+  width: 100vw;
+  height: 100vh; /* Optional: fill full height too */
+}
 :root {
   font-family: "Barlow", "Barlow Condensed", "Bellefair", serif;
   font-weight: 400;
   color: #ffffff;
-  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -76,4 +83,12 @@
   font-family: "Barlow", serif;
   font-size: 18px;
   line-height: 180%;
+}
+@media (max-width: 576px) {
+  .text-preset-1 {
+    font-size: 80px;
+  }
+  .text-preset-5 {
+    font-size: 16px;
+  }
 }

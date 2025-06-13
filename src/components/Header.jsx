@@ -1,50 +1,75 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import logoImg from "/shared/logo.svg";
 import "./Header.css";
+import { useEffect, useState } from "react";
 
-export default function Header() {
+export function NavLinks() {
   return (
-    <header className="header">
-      <div className="header-logo">
-        <img className="logo-img" src={logoImg} alt="Logo" />
-        <div className="horizontal-line"></div>
+    <>
+      <NavLink
+        to="/"
+        className={({ isActive }) => (isActive ? "active" : undefined)}
+      >
+        <strong>00</strong> Home
+      </NavLink>
+      <NavLink
+        to="/destination"
+        className={({ isActive }) => (isActive ? "active" : undefined)}
+      >
+        <strong>01</strong> Destination
+      </NavLink>
+      <NavLink
+        to="/crew"
+        className={({ isActive }) => (isActive ? "active" : undefined)}
+      >
+        <strong>02</strong> Crew
+      </NavLink>
+      <NavLink
+        to="/technology"
+        className={({ isActive }) => (isActive ? "active" : undefined)}
+      >
+        <strong>03</strong> Technology
+      </NavLink>
+    </>
+  );
+}
+export default function Header() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen((prev) => !prev);
+  };
+
+  return (
+    <>
+      <header className="navbar">
+        <img className="logo" src={logoImg} alt="Logo" />
+        <nav className="nav-links-desktop text-preset-8">
+          <NavLinks />
+        </nav>
+
+        <ion-icon
+          className="btn-mobile-nav"
+          name="menu-outline"
+          onClick={toggleSidebar}
+        ></ion-icon>
+      </header>
+
+      {/* Sidebar for Mobile */}
+      <div className={`sidebar ${sidebarOpen ? "open" : ""}`}>
+        <ion-icon
+          className="btn-mobile-nav"
+          style={{ marginLeft: "auto", marginBottom: "2rem" }}
+          name="close-outline"
+          onClick={toggleSidebar}
+        ></ion-icon>
+        <nav className="nav-links-mobile text-preset-8">
+          <NavLinks />
+        </nav>
       </div>
-      <nav>
-        <ul className="main-nav text-preset-8">
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? "active" : undefined)}
-            >
-              00 Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/destination"
-              className={({ isActive }) => (isActive ? "active" : undefined)}
-            >
-              01 Destination
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/crew"
-              className={({ isActive }) => (isActive ? "active" : undefined)}
-            >
-              02 Crew
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/technology"
-              className={({ isActive }) => (isActive ? "active" : undefined)}
-            >
-              03 Technology
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
-    </header>
+
+      {/* Overlay */}
+      {sidebarOpen && <div className="overlay" onClick={toggleSidebar} />}
+    </>
   );
 }

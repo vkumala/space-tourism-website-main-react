@@ -1,34 +1,26 @@
-.section-crew {
+.crew-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-right: 200px;
   gap: 2rem;
-  padding: 1rem;
-  align-items: center;
+  height: 60vh;
 }
-.crew-container {
-  /* background-color: green; */
+
+.crew-left-section {
   display: flex;
   flex-direction: column;
   height: 100%;
-  position: relative;
 }
 
-.crew-text {
-  /* background-color: rgb(134, 95, 160); */
+.crew-profile {
   align-content: center;
-  flex: 1;
+  height: 90%;
 }
 
 .crew-nav {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  /* background-color: aqua; */
+  height: 10%;
   list-style: none;
   display: flex;
   gap: 2rem;
-  margin-bottom: 2rem;
 }
 
 .crew-nav button {
@@ -36,6 +28,8 @@
   height: 20px;
   border-radius: 50%;
   cursor: pointer;
+
+  border: none;
   background-color: gray;
 }
 
@@ -47,20 +41,37 @@
   background-color: white;
 }
 
-.crew-image {
-  /* background-color: crimson; */
-  height: 100%;
-  margin: auto;
+.crew-right-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
 }
 
-.crew-image img {
-  height: 600px;
+.crew-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
 
-  -webkit-mask-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(rgba(0, 0, 0, 1)),
-    to(rgba(0, 0, 0, 0))
-  );
+@media (max-width: 992px) {
+  .crew-section {
+    grid-template-columns: 1fr;
+  }
+
+  .crew-left-section {
+    text-align: center;
+  }
+
+  .crew-section nav {
+    text-align: center;
+    margin: 2rem auto;
+  }
 }

@@ -13,15 +13,18 @@ export default function DestinationPage() {
 
   return (
     <>
-      <div className="page-title text-preset-5">01 Pick your destination</div>
-      <div className="section-destination">
-        <div>
+      <div className="page-title text-preset-5">
+        <span style={{ fontWeight: "100" }}>01</span> Pick your destination
+      </div>
+      <div className="destination-section">
+        <div className="destination-left-section">
           <img
+            className="destination-image"
             src={DESTINATIONS[index].images.webp}
             alt={DESTINATIONS[index].name}
           />
         </div>
-        <div>
+        <div className="destination-right-section">
           <nav>
             <ul className="destination-nav text-preset-8">
               {DESTINATIONS.map((destination, id) => (
@@ -36,8 +39,8 @@ export default function DestinationPage() {
               ))}
             </ul>
           </nav>
-          <div className=" text-preset-2">{DESTINATIONS[index].name}</div>
-          <div className=" text-preset-9">
+          <div className="text-preset-2">{DESTINATIONS[index].name}</div>
+          <div className="destination-description text-preset-9">
             {DESTINATIONS[index].description}
           </div>
           <hr className="destination-hr" />

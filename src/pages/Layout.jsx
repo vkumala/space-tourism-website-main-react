@@ -1,41 +1,74 @@
+import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import { Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import "./Layout.css";
 
 export default function Layout() {
   const location = useLocation();
+  const [bgImage, setBgImage] = useState("");
 
-  let backgroundImage;
-  switch (location.pathname) {
-    case "/crew":
-      backgroundImage = "url('/crew/background-crew-desktop.jpg')";
-      break;
-    case "/destination":
-      backgroundImage =
-        "url('/destination/background-destination-desktop.jpg')";
-      break;
-    case "/technology":
-      backgroundImage = "url('/technology/background-technology-desktop.jpg')";
-      break;
-    default:
-      backgroundImage = "url('/home/background-home-desktop.jpg')";
-      break;
-  }
+  useEffect(() => {
+    const updateBackground = () => {
+      let backgroundImage;
+      const width = window.innerWidth;
+      console.log("width", width);
+      switch (location.pathname) {
+        case "/crew":
+          if (width <= 992) {
+            backgroundImage = "url('/crew/background-crew-tablet.jpg')";
+          } else {
+            backgroundImage = "url('/crew/background-crew-desktop.jpg')";
+          }
+          break;
+        case "/destination":
+          if (width <= 992) {
+            backgroundImage =
+              "url('/destination/background-destination-tablet.jpg')";
+          } else {
+            backgroundImage =
+              "url('/destination/background-destination-desktop.jpg')";
+          }
+          break;
+        case "/technology":
+          if (width <= 992) {
+            backgroundImage =
+              "url('/technology/background-technology-tablet.jpg')";
+          } else {
+            backgroundImage =
+              "url('/technology/background-technology-desktop.jpg')";
+          }
+          break;
+        default:
+          if (width <= 992) {
+            backgroundImage = "url('/home/background-home-tablet.jpg')";
+          } else {
+            backgroundImage = "url('/home/background-home-desktop.jpg')";
+          }
+          break;
+      }
+
+      document.body.style.backgroundImage = backgroundImage;
+    };
+
+    updateBackground(); // Initial check
+    window.addEventListener("resize", updateBackground); // Listen for resize
+
+    return () => window.removeEventListener("resize", updateBackground);
+  }, []);
+
   return (
+    // <>
+    //   <Header />
+    //   <main>{/* <Outlet /> */}</main>
+    // </>
+
     <div
-      style={{
-        backgroundImage,
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        height: "100vh",
-      }}
+      className="dynamic-background"
+      style={{ backgroundImage: `url(${bgImage})` }}
     >
       <Header />
-      <main>
-        <Outlet />
-      </main>
+      <main>{<Outlet />}</main>
     </div>
   );
 }
