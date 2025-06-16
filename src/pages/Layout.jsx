@@ -16,34 +16,54 @@ export default function Layout() {
       switch (location.pathname) {
         case "/crew":
           if (width <= 992) {
-            backgroundImage = "url('/crew/background-crew-tablet.jpg')";
+            backgroundImage =
+              "url('" +
+              import.meta.env.BASE_URL +
+              "/crew/background-crew-tablet.jpg')";
           } else {
-            backgroundImage = "url('/crew/background-crew-desktop.jpg')";
+            backgroundImage =
+              "url('" +
+              import.meta.env.BASE_URL +
+              "/crew/background-crew-desktop.jpg')";
           }
           break;
         case "/destination":
           if (width <= 992) {
             backgroundImage =
-              "url('/destination/background-destination-tablet.jpg')";
+              "url('" +
+              import.meta.env.BASE_URL +
+              "/destination/background-destination-tablet.jpg')";
           } else {
             backgroundImage =
-              "url('/destination/background-destination-desktop.jpg')";
+              "url('" +
+              import.meta.env.BASE_URL +
+              "/destination/background-destination-desktop.jpg')";
           }
           break;
         case "/technology":
           if (width <= 992) {
             backgroundImage =
-              "url('/technology/background-technology-tablet.jpg')";
+              "url('" +
+              import.meta.env.BASE_URL +
+              "/technology/background-technology-tablet.jpg')";
           } else {
             backgroundImage =
-              "url('/technology/background-technology-desktop.jpg')";
+              "url('" +
+              import.meta.env.BASE_URL +
+              "/technology/background-technology-desktop.jpg')";
           }
           break;
         default:
           if (width <= 992) {
-            backgroundImage = "url('/home/background-home-tablet.jpg')";
+            backgroundImage =
+              "url('" +
+              import.meta.env.BASE_URL +
+              "/home/background-home-tablet.jpg')";
           } else {
-            backgroundImage = "url('/home/background-home-desktop.jpg')";
+            backgroundImage =
+              "url('" +
+              import.meta.env.BASE_URL +
+              "/home/background-home-desktop.jpg')";
           }
           break;
       }
@@ -58,11 +78,6 @@ export default function Layout() {
   }, []);
 
   return (
-    // <>
-    //   <Header />
-    //   <main>{/* <Outlet /> */}</main>
-    // </>
-
     <div
       className="dynamic-background"
       style={{ backgroundImage: `url(${bgImage})` }}

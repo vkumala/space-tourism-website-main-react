@@ -38,7 +38,7 @@ export default function CrewPage() {
         <div className="crew-right-section">
           <img
             className="crew-image"
-            src={CREW[index].images.webp}
+            src={import.meta.env.BASE_URL + CREW[index].images.webp}
             alt={CREW[index].name}
           />
         </div>

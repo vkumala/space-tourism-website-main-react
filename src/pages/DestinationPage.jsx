@@ -20,7 +20,7 @@ export default function DestinationPage() {
         <div className="destination-left-section">
           <img
             className="destination-image"
-            src={DESTINATIONS[index].images.webp}
+            src={import.meta.env.BASE_URL + DESTINATIONS[index].images.webp}
             alt={DESTINATIONS[index].name}
           />
         </div>

@@ -46,7 +46,7 @@ export default function TechnologyPage() {
           <div>
             <img
               className="technology-image"
-              src={TECHS[index].images.portrait}
+              src={import.meta.env.BASE_URL + TECHS[index].images.portrait}
               alt={TECHS[index].name}
             />
           </div>
